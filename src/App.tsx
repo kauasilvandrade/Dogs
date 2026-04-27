@@ -13,7 +13,7 @@ export function App() {
         <Header />
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route path="/login" index element={<Login />} />
+          <Route path="/login/*" index element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
