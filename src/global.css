@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --font-sans: Arial, Helvetica, sans-serif;
   --font-sans-second: "Spectral", georgia;
