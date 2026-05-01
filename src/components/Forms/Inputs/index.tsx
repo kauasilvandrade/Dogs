@@ -3,7 +3,7 @@ type Props = Omit<React.ComponentProps<"input">, "value" | "onChange"> & {
   name: string;
   value: string;
   error?: string | null;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: () => void;
 };
 
