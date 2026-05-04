@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
 export function Header() {
-  const { data, userLogout } = useContext(UserContext);
+  const { data } = useContext(UserContext);
   return (
     <header className="shadow fixed w-full z-10 bg-white top-0">
       <nav className="container h-16 flex justify-between items-center">
@@ -16,7 +16,6 @@ export function Header() {
           <Link to={"/conta"} className="text-[#333] flex items-center gap-2">
             {data.nome}
             <img src={User} className="w-[14px] h-[17px]" />
-            <button onClick={userLogout}>Sair</button>
           </Link>
         ) : (
           <Link to={"/login"} className="text-[#333] flex items-center gap-2">

@@ -1,7 +1,8 @@
 type Props = Omit<React.ComponentProps<"input">, "value" | "onChange"> & {
   label: string;
+  type?: string;
   name: string;
-  value: string;
+  value?: string;
   error?: string | null;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: () => void;
@@ -10,6 +11,7 @@ type Props = Omit<React.ComponentProps<"input">, "value" | "onChange"> & {
 export function Input({
   label,
   name,
+  type = "text",
   value,
   onChange,
   error,
@@ -22,7 +24,7 @@ export function Input({
         {label}
       </label>
       <input
-        type="text"
+        type={type}
         id={name}
         name={name}
         {...rest}

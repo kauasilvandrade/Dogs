@@ -36,6 +36,8 @@ export function UserStorage({ children }: any) {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
     autoLogin();
@@ -74,7 +76,6 @@ export function UserStorage({ children }: any) {
     setLoading(false);
     setLogin(false);
     window.localStorage.removeItem("token");
-    navigate("/login");
   }
 
   return (

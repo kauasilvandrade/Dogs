@@ -5,9 +5,15 @@ const types = {
     regex: /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i,
     message: "Prencha um email válido",
   },
+  password: {
+    regex:
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+    message:
+      "A senha precisa ter 1 caracter maísculo, 1 minúsculo e 1 digito. Com no mínimo 8 caracteres.",
+  },
 };
 
-export function useForm(type: "email" | false) {
+export function useForm(type: "email" | "password" | false) {
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | null>(null);
 
